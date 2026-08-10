@@ -18,7 +18,7 @@ if "stage" not in st.session_state:
 if "history" not in st.session_state:
  st.session_state.history = []
 if "eval_result" not in st.session_state:
-st.session_state.eval_result = None
+ st.session_state.eval_result = None
 st.title("🧠 八杉式・思考タイプ診断")
 st.caption("Powered by Google Gemini Engine / Yasugi Method Ver. 2.3")
 st.divider()
