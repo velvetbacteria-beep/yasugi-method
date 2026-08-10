@@ -29,7 +29,7 @@ scenario_text = (
 "あなたはこの危機にどう対応しますか？"
 )
 def evaluate_with_gemini(api_key, history_logs):
-genai.configure(api_key=api_key)
+ genai.configure(api_key=api_key)
 model = genai.GenerativeModel('gemini-1.5-flash')
 prompt = f"""
 あなたは【八杉式試験法】の厳格かつ鋭いAI試験官です。
