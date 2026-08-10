@@ -16,7 +16,7 @@ api_key = st.sidebar.text_input("Gemini API Key を入力", type="password")
 if "stage" not in st.session_state:
  st.session_state.stage = 1
 if "history" not in st.session_state:
-st.session_state.history = []
+ st.session_state.history = []
 if "eval_result" not in st.session_state:
 st.session_state.eval_result = None
 st.title("🧠 八杉式・思考タイプ診断")
