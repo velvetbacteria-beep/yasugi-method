@@ -61,7 +61,7 @@ else:
   st.info(scenario_text)
 ans1 = st.text_area("あなたの決断・行動を入力してください（ご自身の言葉で記述）:", height=150)
 if st.button("回答を送信（Gemini思考エンジン起動）"):
-if len(ans1.strip()) < 10:
+ if len(ans1.strip()) < 10:
  st.warning("思考の軌跡を判定するため、もう少し詳しく記述してください。")
 else:
  st.session_state.history.append({"stage": 1, "text": ans1})
