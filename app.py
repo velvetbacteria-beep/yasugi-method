@@ -67,7 +67,7 @@ else:
   st.session_state.history.append({"stage": 1, "text": ans1})
   st.session_state.stage = 2
   st.rerun()
-elif st.session_state.stage == 2:
+ elif st.session_state.stage == 2:
   st.error("⚠️ 警告：受検者の思考水準を検知。追加ストレッサー（理不尽な制約）が投入されました。")
   st.subheader("Stage 2: 極限下の意思決定")
   streaser_text = (
