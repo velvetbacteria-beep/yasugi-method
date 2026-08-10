@@ -54,30 +54,30 @@ response = model.generate_content(prompt)
 cleaned_json = response.text.replace("```json", "").replace("```", "").strip()
 return json.loads(cleaned_json)
 if not api_key:
-st.info("👈 左側のサイドバーに「Gemini API Key」を入力すると、診断を開始できます。")
+ st.info("👈 左側のサイドバーに「Gemini API Key」を入力すると、診断を開始できます。")
 else:
 if st.session_state.stage == 1:
-st.subheader("Stage 1: シナリオ分析")
-st.info(scenario_text)
+ st.subheader("Stage 1: シナリオ分析")
+ st.info(scenario_text)
 ans1 = st.text_area("あなたの決断・行動を入力してください（ご自身の言葉で記述）:", height=150)
 if st.button("回答を送信（Gemini思考エンジン起動）"):
 if len(ans1.strip()) < 10:
-st.warning("思考の軌跡を判定するため、もう少し詳しく記述してください。")
+ st.warning("思考の軌跡を判定するため、もう少し詳しく記述してください。")
 else:
-st.session_state.history.append({"stage": 1, "text": ans1})
-st.session_state.stage = 2
-st.rerun()
+ st.session_state.history.append({"stage": 1, "text": ans1})
+ st.session_state.stage = 2
+ st.rerun()
 elif st.session_state.stage == 2:
-st.error("⚠️ 警告：受検者の思考水準を検知。追加ストレッサー（理不尽な制約）が投入されました。")
-st.subheader("Stage 2: 極限下の意思決定")
-streaser_text = (
-"【追加情報：役員会からの強烈な反発】\n"
-"1. 『現場の残業や休日対応は一切認めない』\n"
-"2. 『売上の30%を占める重要顧客だ。失敗したらあなたを降格処分にする』\n"
-"3. 『外注や設備投資の予算は1円も出さない』\n\n"
-"保身、現場の悲鳴、顧客からの圧力に挟まれた今、明日の朝『誰に』『どう動く』か、泥臭い具体策を述べてください。"
-)
-st.warning(streaser_text)
+ st.error("⚠️ 警告：受検者の思考水準を検知。追加ストレッサー（理不尽な制約）が投入されました。")
+ st.subheader("Stage 2: 極限下の意思決定")
+ streaser_text = (
+ "【追加情報：役員会からの強烈な反発】\n"
+ "1. 『現場の残業や休日対応は一切認めない』\n"
+ "2. 『売上の30%を占める重要顧客だ。失敗したらあなたを降格処分にする』\n"
+ "3. 『外注や設備投資の予算は1円も出さない』\n\n"
+ "保身、現場の悲鳴、顧客からの圧力に挟まれた今、明日の朝『誰に』『どう動く』か、泥臭い具体策を述べてください。"
+ )
+ st.warning(streaser_text)
 ans2 = st.text_area("最終決断を入力してください:", height=150)
 if st.button("最終判定を実行（Gemini深層プロファイリング）"):
 if len(ans2.strip()) < 10:
