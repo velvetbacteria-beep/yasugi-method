@@ -14,7 +14,7 @@ width: 100%; }
 st.sidebar.title("⚙️ AIエンジン設定")
 api_key = st.sidebar.text_input("Gemini API Key を入力", type="password")
 if "stage" not in st.session_state:
-　st.session_state.stage = 1
+ st.session_state.stage = 1
 if "history" not in st.session_state:
 st.session_state.history = []
 if "eval_result" not in st.session_state:
