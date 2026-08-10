@@ -56,7 +56,7 @@ return json.loads(cleaned_json)
 if not api_key:
  st.info("👈 左側のサイドバーに「Gemini API Key」を入力すると、診断を開始できます。")
 else:
-if st.session_state.stage == 1:
+ if st.session_state.stage == 1:
  st.subheader("Stage 1: シナリオ分析")
  st.info(scenario_text)
 ans1 = st.text_area("あなたの決断・行動を入力してください（ご自身の言葉で記述）:", height=150)
